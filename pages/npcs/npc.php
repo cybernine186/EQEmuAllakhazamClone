@@ -385,7 +385,7 @@ $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query
 if (mysqli_num_rows($result) > 0) {
     $print_buffer .= "<h2 class='section_header'>Killing this NPC lowers factions with</h2><ul>";
     while ($row = mysqli_fetch_array($result)) {
-        $print_buffer .= "<li><a href=faction.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" . $row["value"] . ")";
+        $print_buffer .= "<li><a href=?a=faction&id=" . $row["id"] . ">" . $row["name"] . "</a> (" . $row["value"] . ")";
     }
 }
 $print_buffer .= "</ul>";
@@ -410,7 +410,7 @@ if (mysqli_num_rows($result) > 0) {
         <h2 class='section_header'>Killing this NPC raises factions with</h2>
         <ul>";
     while ($row = mysqli_fetch_array($result)) {
-        $print_buffer .= "<li><a href=faction.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" . $row["value"] . ")";
+        $print_buffer .= "<li><a href=?a=faction&id=" . $row["id"] . ">" . $row["name"] . "</a> (" . $row["value"] . ")";
     }
 }
 $print_buffer .= "</ul>";
